@@ -23,7 +23,8 @@ class UserController {
 
     async signin(req, res, next) {
         try {
-            const user = await Users.findOne({ name: req.body.name });
+            console.log(req.body);
+            const user = await Users.findOne({ name: req.body.username });
             if (!user) return next(throwError(404, "User not found!"));
             const isPassCorrect = await bcrypt.compare(req.body.password, user.password);
             if (!isPassCorrect) return next(throwError(400, "Wrong Credentials!"));

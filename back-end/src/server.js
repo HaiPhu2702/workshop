@@ -5,7 +5,8 @@ require('dotenv').config()
 const fs = require('fs')
 const path = require('path')
 
-const connectMongo = require('./config/connectMongo')
+const connectMongo = require('./config/connectMongo');
+const { log } = require('console');
 
 const app = express()
 
@@ -16,7 +17,7 @@ app.use(express.urlencoded({
 app.use(cors())
 
 connectMongo();
-
+console.log(111111111111111);
 const routePath = path.join(__dirname, 'routes');
 fs.readdirSync(routePath).forEach(async (filename) => {
     try {
@@ -41,3 +42,20 @@ app.use((err, req, res, next) => {
 app.listen(config.server.port, () => {
     console.log("server listening on port " + config.server.port);
 })
+
+// const nums = [-5, 1, -3, 3, -1, 2, 1, -6, 4];
+// let maxSum = 0
+// let sumCompare = 0
+// let temp = 0
+// for (let i = 0; i < nums.length; i++) {
+//     for (let x = 0; x < 4; x++) {
+//         temp += nums[x + i];
+//     }
+//     sumCompare = temp
+//     if (sumCompare > maxSum) {
+//         maxSum = sumCompare;
+//     }
+//     temp = 0
+// }
+
+// console.log(maxSum);

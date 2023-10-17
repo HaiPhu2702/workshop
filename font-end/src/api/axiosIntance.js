@@ -8,27 +8,18 @@ export const api = axios.create({
   },
 })
 
-export const setToken = (token) => {
-  api.defaults.headers.common.Authorization = `Bearer ${"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTJhZGU1YmE0MDg5NjFhNjFkNTEyMmUiLCJuYW1lIjoiaGFpcGh1IiwiY3JlYXRlZEF0IjoiMjAyMy0xMC0xNFQxODozMDo1MS4xMTVaIiwidXBkYXRlZEF0IjoiMjAyMy0xMC0xNFQxODozMDo1MS4xMTVaIiwiX192IjowLCJpYXQiOjE2OTczMDgyNTR9.QRazjfoAigoXS921nk37-lEgq8tZ8CPo1CMKa26BBM0"}`
-}
+const token = localStorage.getItem('access_token');
+api.defaults.headers.common.Authorization = `Bearer ${token}`
 
 export const sendGet = (url, params) => {
-  // const token = Cookies.get('access')
-  api.defaults.headers.common.Authorization = `Bearer ${"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTJhZGU1YmE0MDg5NjFhNjFkNTEyMmUiLCJuYW1lIjoiaGFpcGh1IiwiY3JlYXRlZEF0IjoiMjAyMy0xMC0xNFQxODozMDo1MS4xMTVaIiwidXBkYXRlZEF0IjoiMjAyMy0xMC0xNFQxODozMDo1MS4xMTVaIiwiX192IjowLCJpYXQiOjE2OTczMDgyNTR9.QRazjfoAigoXS921nk37-lEgq8tZ8CPo1CMKa26BBM0"}`
   return api.get(url, { params })
 }
 export const sendPost = (url, params) => {
-  // const token = Cookies.get('access')
-  api.defaults.headers.common.Authorization = `Bearer ${"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTJhZGU1YmE0MDg5NjFhNjFkNTEyMmUiLCJuYW1lIjoiaGFpcGh1IiwiY3JlYXRlZEF0IjoiMjAyMy0xMC0xNFQxODozMDo1MS4xMTVaIiwidXBkYXRlZEF0IjoiMjAyMy0xMC0xNFQxODozMDo1MS4xMTVaIiwiX192IjowLCJpYXQiOjE2OTczMDgyNTR9.QRazjfoAigoXS921nk37-lEgq8tZ8CPo1CMKa26BBM0"}`
   return api.post(url, params)
 }
 export const sendPatch = (url, params) => {
-  // const token = Cookies.get('access')
-  api.defaults.headers.common.Authorization = `Bearer ${"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTJhZGU1YmE0MDg5NjFhNjFkNTEyMmUiLCJuYW1lIjoiaGFpcGh1IiwiY3JlYXRlZEF0IjoiMjAyMy0xMC0xNFQxODozMDo1MS4xMTVaIiwidXBkYXRlZEF0IjoiMjAyMy0xMC0xNFQxODozMDo1MS4xMTVaIiwiX192IjowLCJpYXQiOjE2OTczMDgyNTR9.QRazjfoAigoXS921nk37-lEgq8tZ8CPo1CMKa26BBM0"}`
   return api.patch(url, params)
 }
 export const sendDelete = (url, params) => {
-  // const token = Cookies.get('access')
-  api.defaults.headers.common.Authorization = `Bearer ${"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTJhZGU1YmE0MDg5NjFhNjFkNTEyMmUiLCJuYW1lIjoiaGFpcGh1IiwiY3JlYXRlZEF0IjoiMjAyMy0xMC0xNFQxODozMDo1MS4xMTVaIiwidXBkYXRlZEF0IjoiMjAyMy0xMC0xNFQxODozMDo1MS4xMTVaIiwiX192IjowLCJpYXQiOjE2OTczMDgyNTR9.QRazjfoAigoXS921nk37-lEgq8tZ8CPo1CMKa26BBM0"}`
   return api.delete(url, params)
 }
